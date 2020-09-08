@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A6B61B2325082A6D00E58742 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B2225082A6D00E58742 /* Stack.swift */; };
-		A6B61B2D250830BD00E58742 /* PBAUtilUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B2C250830BD00E58742 /* PBAUtilUnitTests.swift */; };
 		A6B61B2F250830BD00E58742 /* libPBAUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B61B1825082A3400E58742 /* libPBAUtil.a */; };
 		A6B61B35250830C200E58742 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B2425082F9A00E58742 /* StackTests.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +39,6 @@
 		A6B61B2225082A6D00E58742 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		A6B61B2425082F9A00E58742 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		A6B61B2A250830BD00E58742 /* PBAUtilUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBAUtilUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6B61B2C250830BD00E58742 /* PBAUtilUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBAUtilUnitTests.swift; sourceTree = "<group>"; };
 		A6B61B2E250830BD00E58742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				A6B61B2225082A6D00E58742 /* Stack.swift */,
-				A6B61B2425082F9A00E58742 /* StackTests.swift */,
 			);
 			path = PBAUtil;
 			sourceTree = "<group>";
@@ -93,7 +90,7 @@
 		A6B61B2B250830BD00E58742 /* PBAUtilUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6B61B2C250830BD00E58742 /* PBAUtilUnitTests.swift */,
+				A6B61B2425082F9A00E58742 /* StackTests.swift */,
 				A6B61B2E250830BD00E58742 /* Info.plist */,
 			);
 			path = PBAUtilUnitTests;
@@ -198,7 +195,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6B61B35250830C200E58742 /* StackTests.swift in Sources */,
-				A6B61B2D250830BD00E58742 /* PBAUtilUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
