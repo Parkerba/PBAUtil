@@ -15,7 +15,7 @@ class StackTests: XCTestCase {
         var stack = Stack<Int>()
         XCTAssertEqual(0, stack.count)
         
-        stack = Stack<Int>([1,2,3])
+        stack = Stack<Int>([1, 2, 3])
         XCTAssertEqual(3, stack.count)
         
         stack = [1,2]
@@ -23,7 +23,7 @@ class StackTests: XCTestCase {
     }
     
     func testPop() {
-        var stack = Stack<Int>([1,2,3])
+        var stack = Stack<Int>([1, 2, 3])
         XCTAssertEqual(1, stack.pop())
         XCTAssertEqual(2, stack.count)
         
@@ -38,7 +38,7 @@ class StackTests: XCTestCase {
     }
     
     func testPush() {
-        var stack = Stack<Int>([1,2])
+        var stack = Stack<Int>([1, 2])
         XCTAssertEqual(2, stack.count)
         stack.push(3)
         XCTAssertEqual(3, stack.count)
@@ -53,8 +53,8 @@ class StackTests: XCTestCase {
     }
     
     func testGetUnderlyingArray() {
-        let stackArr = [1,2,3]
-        var stack: Stack = [1,2,3]
+        let stackArr = [1, 2, 3]
+        var stack: Stack = [1, 2, 3]
         XCTAssertEqual(stackArr, stack.getUnderlyingArray())
         
         stack.pop()

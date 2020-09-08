@@ -14,6 +14,10 @@ struct Queue<Element>: ExpressibleByArrayLiteral {
     
     private var elements: Array<Element>
     
+    var count: Int {
+        elements.count
+    }
+    
     init(arrayLiteral elements: Element...) {
         self.elements = elements
     }

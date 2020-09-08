@@ -11,6 +11,7 @@
 		A6B61B2F250830BD00E58742 /* libPBAUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B61B1825082A3400E58742 /* libPBAUtil.a */; };
 		A6B61B35250830C200E58742 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B2425082F9A00E58742 /* StackTests.swift */; };
 		A6B61B38250840B100E58742 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B37250840B100E58742 /* Queue.swift */; };
+		A6B61B3A250843C500E58742 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B39250843C500E58742 /* QueueTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		A6B61B2A250830BD00E58742 /* PBAUtilUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBAUtilUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B61B2E250830BD00E58742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6B61B37250840B100E58742 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		A6B61B39250843C500E58742 /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B61B2425082F9A00E58742 /* StackTests.swift */,
+				A6B61B39250843C500E58742 /* QueueTests.swift */,
 				A6B61B2E250830BD00E58742 /* Info.plist */,
 			);
 			path = PBAUtilUnitTests;
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6B61B35250830C200E58742 /* StackTests.swift in Sources */,
+				A6B61B3A250843C500E58742 /* QueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
