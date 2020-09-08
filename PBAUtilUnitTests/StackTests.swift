@@ -56,7 +56,9 @@ class StackTests: XCTestCase {
         let stackArr = [1,2,3]
         var stack: Stack = [1,2,3]
         XCTAssertEqual(stackArr, stack.getUnderlyingArray())
+        
         stack.pop()
+        XCTAssertEqual([2,3], stack.getUnderlyingArray())
         XCTAssertNotEqual(stackArr, stack.getUnderlyingArray())
     }
 
