@@ -7,8 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6B61B1C25082A3400E58742 /* PBAUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B1B25082A3400E58742 /* PBAUtil.swift */; };
+		A6B61B2325082A6D00E58742 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B2225082A6D00E58742 /* Stack.swift */; };
+		A6B61B2D250830BD00E58742 /* PBAUtilUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B2C250830BD00E58742 /* PBAUtilUnitTests.swift */; };
+		A6B61B2F250830BD00E58742 /* libPBAUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B61B1825082A3400E58742 /* libPBAUtil.a */; };
+		A6B61B35250830C200E58742 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61B2425082F9A00E58742 /* StackTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6B61B30250830BD00E58742 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6B61B1025082A3400E58742 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6B61B1725082A3400E58742;
+			remoteInfo = PBAUtil;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A6B61B1625082A3400E58742 /* CopyFiles */ = {
@@ -24,7 +37,11 @@
 
 /* Begin PBXFileReference section */
 		A6B61B1825082A3400E58742 /* libPBAUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPBAUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6B61B1B25082A3400E58742 /* PBAUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBAUtil.swift; sourceTree = "<group>"; };
+		A6B61B2225082A6D00E58742 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		A6B61B2425082F9A00E58742 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		A6B61B2A250830BD00E58742 /* PBAUtilUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBAUtilUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6B61B2C250830BD00E58742 /* PBAUtilUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBAUtilUnitTests.swift; sourceTree = "<group>"; };
+		A6B61B2E250830BD00E58742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +52,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6B61B27250830BD00E58742 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6B61B2F250830BD00E58742 /* libPBAUtil.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B61B1A25082A3400E58742 /* PBAUtil */,
+				A6B61B2B250830BD00E58742 /* PBAUtilUnitTests */,
 				A6B61B1925082A3400E58742 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B61B1825082A3400E58742 /* libPBAUtil.a */,
+				A6B61B2A250830BD00E58742 /* PBAUtilUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +84,19 @@
 		A6B61B1A25082A3400E58742 /* PBAUtil */ = {
 			isa = PBXGroup;
 			children = (
-				A6B61B1B25082A3400E58742 /* PBAUtil.swift */,
+				A6B61B2225082A6D00E58742 /* Stack.swift */,
+				A6B61B2425082F9A00E58742 /* StackTests.swift */,
 			);
 			path = PBAUtil;
+			sourceTree = "<group>";
+		};
+		A6B61B2B250830BD00E58742 /* PBAUtilUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6B61B2C250830BD00E58742 /* PBAUtilUnitTests.swift */,
+				A6B61B2E250830BD00E58742 /* Info.plist */,
+			);
+			path = PBAUtilUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +119,24 @@
 			productReference = A6B61B1825082A3400E58742 /* libPBAUtil.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		A6B61B29250830BD00E58742 /* PBAUtilUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6B61B32250830BD00E58742 /* Build configuration list for PBXNativeTarget "PBAUtilUnitTests" */;
+			buildPhases = (
+				A6B61B26250830BD00E58742 /* Sources */,
+				A6B61B27250830BD00E58742 /* Frameworks */,
+				A6B61B28250830BD00E58742 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6B61B31250830BD00E58742 /* PBXTargetDependency */,
+			);
+			name = PBAUtilUnitTests;
+			productName = PBAUtilUnitTests;
+			productReference = A6B61B2A250830BD00E58742 /* PBAUtilUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +148,9 @@
 				ORGANIZATIONNAME = "Parker Amundsen";
 				TargetAttributes = {
 					A6B61B1725082A3400E58742 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					A6B61B29250830BD00E58742 = {
 						CreatedOnToolsVersion = 11.7;
 					};
 				};
@@ -111,20 +169,48 @@
 			projectRoot = "";
 			targets = (
 				A6B61B1725082A3400E58742 /* PBAUtil */,
+				A6B61B29250830BD00E58742 /* PBAUtilUnitTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6B61B28250830BD00E58742 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6B61B1425082A3400E58742 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B61B1C25082A3400E58742 /* PBAUtil.swift in Sources */,
+				A6B61B2325082A6D00E58742 /* Stack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6B61B26250830BD00E58742 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6B61B35250830C200E58742 /* StackTests.swift in Sources */,
+				A6B61B2D250830BD00E58742 /* PBAUtilUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6B61B31250830BD00E58742 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6B61B1725082A3400E58742 /* PBAUtil */;
+			targetProxy = A6B61B30250830BD00E58742 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A6B61B1D25082A3400E58742 /* Debug */ = {
@@ -267,6 +353,42 @@
 			};
 			name = Release;
 		};
+		A6B61B33250830BD00E58742 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJA26S6A7L;
+				INFOPLIST_FILE = PBAUtilUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ParkerAmundsen.PBAUtilUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6B61B34250830BD00E58742 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJA26S6A7L;
+				INFOPLIST_FILE = PBAUtilUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ParkerAmundsen.PBAUtilUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +406,15 @@
 			buildConfigurations = (
 				A6B61B2025082A3400E58742 /* Debug */,
 				A6B61B2125082A3400E58742 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6B61B32250830BD00E58742 /* Build configuration list for PBXNativeTarget "PBAUtilUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6B61B33250830BD00E58742 /* Debug */,
+				A6B61B34250830BD00E58742 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
