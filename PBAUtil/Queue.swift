@@ -30,6 +30,7 @@ struct Queue<Element>: ExpressibleByArrayLiteral {
         elements.append(element)
     }
     
+    @discardableResult
     mutating func dequeue() -> Element? {
         return elements.isEmpty ? nil : elements.removeFirst()
     }
