@@ -47,5 +47,12 @@ class QueueTests: XCTestCase {
         XCTAssertEqual(nil, queue.dequeue())
         XCTAssertEqual([], queue.getUnderlyingArray())
     }
+    
+    func testSequenceConformance() {
+        var queue = Queue(["1", "2", "2"])
+        let set = Set<String>(queue)
+        queue = Queue(set)
+        XCTAssertEqual(2, queue.count)
+    }
 
 }

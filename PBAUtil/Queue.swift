@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Queue<Element>: ExpressibleByArrayLiteral {
+struct Queue<Element>: ExpressibleByArrayLiteral, Sequence, IteratorProtocol {
+    
+    private var current = 0
     
     typealias ArrayLiteralElement = Element
     
@@ -22,8 +24,22 @@ struct Queue<Element>: ExpressibleByArrayLiteral {
         self.elements = elements
     }
     
+    init<list: Sequence>(_ sequence: list) where list.Element == Element {
+        elements = Array(sequence)
+    }
+    
     init(_ array: Array<Element>) {
         self.elements = array
+    }
+    
+    mutating func next() -> Element? {
+        if current < count {
+            defer {
+                current += 1
+            }
+            return elements[current]
+        }
+        return nil
     }
     
     mutating func enqueue(_ element: Element) {

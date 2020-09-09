@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Stack<Element>: ExpressibleByArrayLiteral {
+struct Stack<Element>: ExpressibleByArrayLiteral, Sequence, IteratorProtocol {
+    
+    private var current = 0
     
     typealias ArrayLiteralElement = Element
         
@@ -24,6 +26,20 @@ struct Stack<Element>: ExpressibleByArrayLiteral {
     
     init(_ array: [Element] = []) {
         self.elements = array
+    }
+    
+    init<list: Sequence>(_ sequence: list) where list.Element == Element {
+        elements = Array(sequence)
+    }
+    
+    mutating func next() -> Element? {
+        if current < count {
+            defer {
+                current += 1
+            }
+            return elements[current]
+        }
+        return nil
     }
     
     @discardableResult

@@ -61,5 +61,12 @@ class StackTests: XCTestCase {
         XCTAssertEqual([2,3], stack.getUnderlyingArray())
         XCTAssertNotEqual(stackArr, stack.getUnderlyingArray())
     }
+    
+    func testSequenceConformance() {
+        var stack: Stack = [1, 2, 3, 1]
+        let set = Set(stack)
+        stack = Stack(set)
+        XCTAssertEqual(3, stack.count)
+    }
 
 }
