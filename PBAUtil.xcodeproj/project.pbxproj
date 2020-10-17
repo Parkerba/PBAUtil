@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6550746253B7C4E0036FF42 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6550745253B7C4E0036FF42 /* LinkedListTests.swift */; };
 		A693BF782527C2A000CBCFF6 /* +Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693BF772527C2A000CBCFF6 /* +Array.swift */; };
 		A693BF7C2527C5E400CBCFF6 /* +ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693BF7B2527C5E400CBCFF6 /* +ArrayTests.swift */; };
 		A6A28E4425088AF8008233EE /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A28E4325088AF8008233EE /* Conversion.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A6550745253B7C4E0036FF42 /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 		A693BF772527C2A000CBCFF6 /* +Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Array.swift"; sourceTree = "<group>"; };
 		A693BF7B2527C5E400CBCFF6 /* +ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ArrayTests.swift"; sourceTree = "<group>"; };
 		A6A28E4325088AF8008233EE /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B61B2425082F9A00E58742 /* StackTests.swift */,
+				A6550745253B7C4E0036FF42 /* LinkedListTests.swift */,
 				A6B61B39250843C500E58742 /* QueueTests.swift */,
 				A6D19214250891CE007EFEB3 /* ConversionTests.swift */,
 				A6D1921825094F24007EFEB3 /* MathTests.swift */,
@@ -168,7 +171,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Parker Amundsen";
 				TargetAttributes = {
 					A6B61B1725082A3400E58742 = {
@@ -230,6 +233,7 @@
 				A6D19215250891CE007EFEB3 /* ConversionTests.swift in Sources */,
 				A6B61B35250830C200E58742 /* StackTests.swift in Sources */,
 				A6B61B3A250843C500E58742 /* QueueTests.swift in Sources */,
+				A6550746253B7C4E0036FF42 /* LinkedListTests.swift in Sources */,
 				A6D1921925094F24007EFEB3 /* MathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +275,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -331,6 +336,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

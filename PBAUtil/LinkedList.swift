@@ -8,11 +8,15 @@
 
 import Foundation
 
+/// LinkedList is a standard doubly-linked list.
+/// - ```head``` is the beginning of the linked list.
+/// - ```tail``` is the end of the linked list
 class LinkedList<Element>: ExpressibleByArrayLiteral {
     
     var head: Node? = nil
     var tail: Node? = nil
     
+    /// The node class for LinkedList. Doubly-linked node
     class Node {
         var value: Element
         var next: Node?

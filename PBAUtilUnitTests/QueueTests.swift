@@ -12,7 +12,7 @@ import XCTest
 class QueueTests: XCTestCase {
     
     func testInit() {
-        var queue: Queue<Int> = [1 ,2, 3]
+        var queue: Queue<Int> = [1, 2, 3]
         XCTAssertEqual(3, queue.count)
         
         queue = Queue([1])
@@ -35,7 +35,7 @@ class QueueTests: XCTestCase {
     }
     
     func testDequeue() {
-        var queue: Queue = ["String1", "String2"]
+        let queue: Queue = ["String1", "String2"]
         XCTAssert(queue.count == 2)
         XCTAssert("String2" == queue.dequeue())
         XCTAssert(queue.count == 1)
@@ -43,6 +43,20 @@ class QueueTests: XCTestCase {
         XCTAssert(queue.count == 0)
         XCTAssertNil(queue.dequeue())
         XCTAssert(queue.count == 0)
+    }
+    
+    func testEnqueueAndDequeue() {
+        let queue: Queue<Int> = []
+        let arr = [1,2,3,4,5,6]
+        
+        for num in arr {
+            queue.enqueue(num)
+        }
+        var arr1: [Int] = []
+        while !queue.isEmpty {
+            arr1.append(queue.dequeue()!)
+        }
+        XCTAssertEqual(arr, arr1)
     }
 
 }
