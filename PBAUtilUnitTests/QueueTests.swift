@@ -27,32 +27,22 @@ class QueueTests: XCTestCase {
         XCTAssertEqual(2, queue.count)
         queue.enqueue("Something")
         XCTAssertEqual(3, queue.count)
-        XCTAssertEqual(["String1", "String2", "Something"], queue.getUnderlyingArray())
         
         queue = []
         XCTAssertEqual(0, queue.count)
         queue.enqueue("")
         XCTAssertEqual(1, queue.count)
-        XCTAssertEqual([""], queue.getUnderlyingArray())
     }
     
     func testDequeue() {
         var queue: Queue = ["String1", "String2"]
-        XCTAssertEqual("String1", queue.dequeue())
-        XCTAssertEqual(["String2"], queue.getUnderlyingArray())
-        
-        XCTAssertEqual("String2", queue.dequeue())
-        XCTAssertEqual([], queue.getUnderlyingArray())
-
-        XCTAssertEqual(nil, queue.dequeue())
-        XCTAssertEqual([], queue.getUnderlyingArray())
-    }
-    
-    func testSequenceConformance() {
-        var queue = Queue(["1", "2", "2"])
-        let set = Set<String>(queue)
-        queue = Queue(set)
-        XCTAssertEqual(2, queue.count)
+        XCTAssert(queue.count == 2)
+        XCTAssert("String2" == queue.dequeue())
+        XCTAssert(queue.count == 1)
+        XCTAssert("String1" == queue.dequeue())
+        XCTAssert(queue.count == 0)
+        XCTAssertNil(queue.dequeue())
+        XCTAssert(queue.count == 0)
     }
 
 }

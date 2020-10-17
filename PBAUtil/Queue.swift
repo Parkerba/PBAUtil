@@ -8,51 +8,40 @@
 
 import Foundation
 
-struct Queue<Element>: ExpressibleByArrayLiteral, Sequence, IteratorProtocol {
+class Queue<Element>: ExpressibleByArrayLiteral {
+    var count: Int
+    private var linkedList: LinkedList<Element>
     
-    private var current = 0
-    
-    typealias ArrayLiteralElement = Element
-    
-    private var elements: Array<Element>
-    
-    var count: Int {
-        elements.count
+    init() {
+        linkedList = []
+        count = 0
     }
     
-    init(arrayLiteral elements: Element...) {
-        self.elements = elements
+    init(_ elements: [Element]) {
+        linkedList = LinkedList<Element>(elements)
+        count = elements.count
     }
     
-    init<list: Sequence>(_ sequence: list) where list.Element == Element {
-        elements = Array(sequence)
+    convenience required init(arrayLiteral elements: Element...) {
+        self.init(elements)
     }
     
-    init(_ array: Array<Element>) {
-        self.elements = array
-    }
-    
-    mutating func next() -> Element? {
-        if current < count {
-            defer {
-                current += 1
-            }
-            return elements[current]
-        }
-        return nil
-    }
-    
-    mutating func enqueue(_ element: Element) {
-        elements.append(element)
+    func enqueue(_ element: Element) {
+        let newHead = LinkedList.Node(element)
+        newHead.next = linkedList.head
+        linkedList.head?.prev = newHead
+        linkedList.head = newHead
+        count += 1
     }
     
     @discardableResult
-    mutating func dequeue() -> Element? {
-        return elements.isEmpty ? nil : elements.removeFirst()
-    }
-    
-    func getUnderlyingArray() -> Array<Element> {
-        return elements
+    func dequeue() -> Element? {
+        if linkedList.tail == nil { return nil }
+        let toDequeue = linkedList.tail
+        linkedList.tail = linkedList.tail?.prev
+        linkedList.tail?.next = nil
+        count -= 1
+        return toDequeue?.value
     }
     
 }

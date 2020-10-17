@@ -11,9 +11,7 @@ import Foundation
 struct Stack<Element>: ExpressibleByArrayLiteral, Sequence, IteratorProtocol {
     
     private var current = 0
-    
-    typealias ArrayLiteralElement = Element
-        
+            
     private var elements: Array<Element>
     
     var count: Int {
