@@ -23,14 +23,14 @@ class StackTests: XCTestCase {
     }
     
     func testPop() {
-        var stack = Stack<Int>([1, 2, 3])
-        XCTAssertEqual(1, stack.pop())
+        let stack = Stack<Int>([1, 2, 3])
+        XCTAssertEqual(3, stack.pop())
         XCTAssertEqual(2, stack.count)
         
         XCTAssertEqual(2, stack.pop())
         XCTAssertEqual(1, stack.count)
         
-        XCTAssertEqual(3, stack.pop())
+        XCTAssertEqual(1, stack.pop())
         XCTAssertEqual(0, stack.count)
         
         XCTAssertNil(stack.pop())
@@ -52,21 +52,27 @@ class StackTests: XCTestCase {
         XCTAssertEqual(1, stack.count)
     }
     
-    func testGetUnderlyingArray() {
-        let stackArr = [1, 2, 3]
-        var stack: Stack = [1, 2, 3]
-        XCTAssertEqual(stackArr, stack.getUnderlyingArray())
+    func testPushAndPop() {
+        let stack = Stack<Int>()
+        XCTAssertEqual(stack.count, 0)
+        XCTAssertEqual(stack.pop(), nil)
         
-        stack.pop()
-        XCTAssertEqual([2,3], stack.getUnderlyingArray())
-        XCTAssertNotEqual(stackArr, stack.getUnderlyingArray())
-    }
-    
-    func testSequenceConformance() {
-        var stack: Stack = [1, 2, 3, 1]
-        let set = Set(stack)
-        stack = Stack(set)
-        XCTAssertEqual(3, stack.count)
+        stack.push(4)
+        XCTAssertEqual(stack.pop(), 4)
+        XCTAssertEqual(stack.count, 0)
+
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        XCTAssertEqual(stack.count, 3)
+        XCTAssertEqual(stack.pop(), 3)
+        XCTAssertEqual(stack.pop(), 2)
+        XCTAssertEqual(stack.count, 1)
+        stack.push(2)
+        XCTAssertEqual(stack.count, 2)
+        XCTAssertEqual(stack.pop(), 2)
+        XCTAssertEqual(stack.pop(), 1)
+        XCTAssertEqual(stack.pop(), nil)
     }
 
 }

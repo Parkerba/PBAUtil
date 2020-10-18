@@ -8,49 +8,50 @@
 
 import Foundation
 
-struct Stack<Element>: ExpressibleByArrayLiteral, Sequence, IteratorProtocol {
+class Stack<Element>: ExpressibleByArrayLiteral {
     
-    private var current = 0
-            
-    private var elements: Array<Element>
+    var count: Int
+    private var linkedList: LinkedList<Element>
     
-    var count: Int {
-        elements.count
+    var isEmpty: Bool {
+        return count == 0
     }
     
-    init(arrayLiteral elements: Element...) {
-        self.elements = elements
+    init() {
+        linkedList = []
+        count = 0
     }
     
-    init(_ array: [Element] = []) {
-        self.elements = array
+    init(_ elements: [Element]) {
+        linkedList = LinkedList(elements)
+        count = elements.count
     }
     
-    init<list: Sequence>(_ sequence: list) where list.Element == Element {
-        elements = Array(sequence)
+    convenience required init(arrayLiteral elements: Element...) {
+        self.init(elements)
     }
     
-    mutating func next() -> Element? {
-        if current < count {
-            defer {
-                current += 1
-            }
-            return elements[current]
+    func push(_ element: Element) {
+        let newNode = LinkedList.Node(element)
+        if count == 0 {
+            linkedList.head = newNode
+            linkedList.tail = linkedList.head
+        } else {
+            linkedList.tail?.next = newNode
+            newNode.prev = linkedList.tail
+            linkedList.tail = linkedList.tail?.next
         }
-        return nil
+        count += 1
     }
     
     @discardableResult
-    mutating func pop() -> Element? {
-        return elements.isEmpty ? nil : elements.removeFirst()
-    }
-    
-    mutating func push(_ element: Element) {
-        elements.append(element)
-    }
-    
-    func getUnderlyingArray() -> Array<Element> {
-        return elements
+    func pop() -> Element? {
+        if isEmpty { return nil }
+        let poppedValue = linkedList.tail?.value
+        linkedList.tail = linkedList.tail?.prev
+        linkedList.tail?.next = nil
+        count -= 1
+        return poppedValue
     }
     
 }
