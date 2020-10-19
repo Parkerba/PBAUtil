@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Stack is a LIFO data structure that uses a LinkedList to accomplish o(n) ```push(element)``` and  ```pop()``` operations
 class Stack<Element>: ExpressibleByArrayLiteral {
     
     var count: Int
@@ -21,7 +22,7 @@ class Stack<Element>: ExpressibleByArrayLiteral {
         linkedList = []
         count = 0
     }
-    
+    /// Elements from the array will be placed in the order of the stack from beginning to end.
     init(_ elements: [Element]) {
         linkedList = LinkedList(elements)
         count = elements.count
@@ -31,6 +32,7 @@ class Stack<Element>: ExpressibleByArrayLiteral {
         self.init(elements)
     }
     
+    /// Places element on "top" of the stack.
     func push(_ element: Element) {
         let newNode = LinkedList.Node(element)
         if count == 0 {
@@ -44,6 +46,7 @@ class Stack<Element>: ExpressibleByArrayLiteral {
         count += 1
     }
     
+    /// Removes element from "top" of the stack.
     @discardableResult
     func pop() -> Element? {
         if isEmpty { return nil }
