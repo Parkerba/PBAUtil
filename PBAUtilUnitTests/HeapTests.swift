@@ -28,6 +28,19 @@ class HeapTests: XCTestCase {
         XCTAssertEqual(heap.count, 0)
         XCTAssertNil(heap.peek())
         XCTAssertNil(heap.remove())
+        
+        let maxNumHeap = Heap<Int,Int>(as: .max)
+        for num in 0...10 {
+            maxNumHeap.insert(num)
+        }
+        
+        for num in (0...10).reversed() {
+            XCTAssertEqual(num, maxNumHeap.remove())
+        }
+        
+        XCTAssertEqual(maxNumHeap.count, 0)
+        XCTAssertNil(maxNumHeap.peek())
+        XCTAssertNil(maxNumHeap.remove())
     }
     
     func testMinHeap() {
@@ -47,6 +60,19 @@ class HeapTests: XCTestCase {
         XCTAssertEqual(heap.count, 0)
         XCTAssertNil(heap.peek())
         XCTAssertNil(heap.remove())
+        
+        let minNumHeap = Heap<Int,Int>(as: .min)
+        for num in 0...10 {
+            minNumHeap.insert(num)
+        }
+        
+        for num in 0...10 {
+            XCTAssertEqual(num, minNumHeap.remove())
+        }
+        
+        XCTAssertEqual(minNumHeap.count, 0)
+        XCTAssertNil(minNumHeap.peek())
+        XCTAssertNil(minNumHeap.remove())
     }
 
 }

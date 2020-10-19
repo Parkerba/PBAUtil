@@ -8,13 +8,24 @@
 
 import Foundation
 
+
+/// Heap is a binary heap structure that can be used as a priority queue.
+/// - This provides for 0(1) access to the top of the heap and o(logn) insertion and removal times
+/// - Priority needs to be comparable. This is what is used to maintain the heap like properties.
+/// - Element can be of any type. However if Element is of type Priority then insertion can be made with only the element.
 class Heap<Element, Priority: Comparable> {
     
+    
+    /// Type used to determine the functionality of the heap.
+    /// - min places the smallest (lowest) priority node at the root of the heap
+    /// - max places the largest (highest) priority node at the root of the heap
     enum HeapType {
         case min
         case max
     }
     
+    
+    /// This is the node class that Heap will use to form the tree structure
     class Node<Element, Priority: Comparable> {
         
         var parent: Node?
@@ -63,6 +74,7 @@ class Heap<Element, Priority: Comparable> {
         
     }
     
+    /// number of elements in the heap
     var count: Int = 0
     
     private var root: Node<Element, Priority>?
@@ -77,6 +89,10 @@ class Heap<Element, Priority: Comparable> {
         return root?.value
     }
     
+    /// Inserts a new node in the heap.
+    /// - Parameters:
+    ///   - element: The value that will be tied to the priority and eventually returned when removed.
+    ///   - priority: The priority that will be used to order the nodes.
     func insert(_ element: Element, with priority: Priority) {
         let newNode = Node<Element, Priority>(element, with: priority)
         count += 1
@@ -96,6 +112,9 @@ class Heap<Element, Priority: Comparable> {
         bubbleUp(newNode)
     }
     
+    /// This function removes the highest (max heap type) or the lowest (min heap type) priority element in the heap.
+    /// - Returns: The element of the node being removed from the heap.
+    @discardableResult
     func remove() -> Element? {
         guard let rootElement = root?.value else { return nil }
         
@@ -119,6 +138,9 @@ class Heap<Element, Priority: Comparable> {
         return rootElement
     }
     
+    
+    /// Used after insertion as nodes are inserted in the "last" position even if they do not belong there.
+    /// - Parameter node: Node that was recently inserted and needs to have position validated.
     private func bubbleUp(_ node: Node<Element, Priority>) {
         var node = node
         if heapType == .max {
@@ -138,6 +160,8 @@ class Heap<Element, Priority: Comparable> {
         }
     }
     
+    /// Used after removal, the root node is replaced with the node in the "last" position.
+    /// The new node in the root position will be bubbled down until in the correct position.
     private func bubbleDown() {
         guard var node = root else { return }
         if heapType == .max {
@@ -163,6 +187,8 @@ class Heap<Element, Priority: Comparable> {
         }
     }
     
+    /// This function finds the parent of the "next position", used to insert a new node.
+    /// - Returns: The parent of the "next" position.
     private func findParentOfNextPosition() -> Node<Element, Priority>? {
         var iTrimmed = count << count.leadingZeroBitCount
         iTrimmed <<= 1
@@ -186,6 +212,9 @@ class Heap<Element, Priority: Comparable> {
         return node
     }
     
+    
+    /// Used for removals. This finds the last node to replace  the root node.
+    /// - Returns: The node occupying the "last" position.
     private func findLastPosition() -> Node<Element, Priority>? {
         var node = root
         
@@ -206,6 +235,9 @@ class Heap<Element, Priority: Comparable> {
 }
 
 extension Heap where Element == Priority {
+    
+    /// This is a overloaded insert method that allows easy insertion with the element that its self will be used for comparison.
+    /// - Parameter element: the element that will also act as priority.
     func insert(_ element: Element) {
         insert(element, with: element)
     }

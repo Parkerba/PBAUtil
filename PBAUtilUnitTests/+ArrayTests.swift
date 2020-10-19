@@ -10,6 +10,7 @@ import XCTest
 @testable import PBAUtil
 
 class ArrayTests: XCTestCase {
+    
     func testIsPalindromic() {
         let evenPalindrome = [Character]("hannah")
         XCTAssertTrue(evenPalindrome.isPalindromic())
@@ -35,5 +36,6 @@ class ArrayTests: XCTestCase {
         let nonPalindrome2 = [Character]("Not a palindrome")
         XCTAssertFalse(nonPalindrome2.isPalindromic())
     }
+    
 }
 
